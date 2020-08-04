@@ -126,7 +126,7 @@ export default function Landing() {
                       marginBottom: 0,
                     }}
                   >
-                    Hi,{" "}
+                    Hi,{"  "}
                   </h1>
                 </Grid>
                 <Grid item>

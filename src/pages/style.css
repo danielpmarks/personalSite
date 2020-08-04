@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap");
+.secButton {
+  font-family: "Poppins";
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 3rem;
+  color: white;
+  border: 2px solid red;
+  padding: 2vmin;
+  z-index: 5;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.secButton:hover {
+  color: #5a75ab;
+}
+
+.secButton:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}

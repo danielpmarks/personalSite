@@ -32,6 +32,10 @@ export default function Landing() {
   const [linkedInShadow, setLinkedInShadow] = useState(false);
   const [githubShadow, setGithubShadow] = useState(false);
 
+  const [otShadow, setOtShadow] = useState(false);
+  const [ieeeShadow, setIeeeShadow] = useState(false);
+  const [verlShadow, setVerlShadow] = useState(false);
+
   const sections = [
     "Home",
     "Education",
@@ -54,22 +58,31 @@ export default function Landing() {
     setDrawer(false);
   };
 
-  const toggleShadows = (id) => {
+  const toggleShadows = (id, state) => {
     switch (id) {
       case "vinyl-stream":
-        setVsShadow(!vsShadow);
+        setVsShadow(state);
         break;
       case "virtubook":
-        setVbShadow(!vbShadow);
+        setVbShadow(state);
         break;
       case "email":
-        setEmailShadow(!emailShadow);
+        setEmailShadow(state);
         break;
       case "linkedIn":
-        setLinkedInShadow(!linkedInShadow);
+        setLinkedInShadow(state);
         break;
       case "github":
-        setGithubShadow(!githubShadow);
+        setGithubShadow(state);
+        break;
+      case "orangeTree":
+        setOtShadow(state);
+        break;
+      case "IEEE":
+        setIeeeShadow(state);
+        break;
+      case "VERL":
+        setVerlShadow(state);
         break;
     }
   };
@@ -126,7 +139,7 @@ export default function Landing() {
                       marginBottom: 0,
                     }}
                   >
-                    Hi,{"  "}
+                    Hi,{" "}
                   </h1>
                 </Grid>
                 <Grid item>
@@ -197,8 +210,8 @@ export default function Landing() {
                   <Box
                     className={classes.infoBox}
                     boxShadow={emailShadow ? 10 : 3}
-                    onMouseEnter={() => toggleShadows("email")}
-                    onMouseLeave={() => toggleShadows("email")}
+                    onMouseEnter={() => toggleShadows("email", true)}
+                    onMouseLeave={() => toggleShadows("email", false)}
                   >
                     <Grid container justify="center" alignItems="center">
                       <Grid xs={12}>
@@ -227,8 +240,8 @@ export default function Landing() {
                   <Box
                     className={classes.infoBox}
                     boxShadow={linkedInShadow ? 10 : 3}
-                    onMouseEnter={() => toggleShadows("linkedIn")}
-                    onMouseLeave={() => toggleShadows("linkedIn")}
+                    onMouseEnter={() => toggleShadows("linkedIn", true)}
+                    onMouseLeave={() => toggleShadows("linkedIn", false)}
                   >
                     <Grid container justify="center" alignItems="center">
                       <Grid xs={12}>
@@ -249,8 +262,8 @@ export default function Landing() {
                   <Box
                     className={classes.infoBox}
                     boxShadow={githubShadow ? 10 : 3}
-                    onMouseEnter={() => toggleShadows("github")}
-                    onMouseLeave={() => toggleShadows("github")}
+                    onMouseEnter={() => toggleShadows("github", true)}
+                    onMouseLeave={() => toggleShadows("github", false)}
                   >
                     <Grid container justify="center" alignItems="center">
                       <Grid xs={12}>
@@ -278,47 +291,53 @@ export default function Landing() {
                 offset={0}
                 animateIn="animate__animated animate__fadeInUp"
               >
-                <Box id="orange-tree" className={classes.workBox} boxShadow={5}>
-                  <Grid
-                    container
-                    justify="center"
-                    alignItems="center"
-                    spacing={5}
+                <a
+                  href="https://www.linkedin.com/company/otalternatives/"
+                  target="_blank"
+                >
+                  <Box
+                    id="orange-tree"
+                    className={classes.workBox}
+                    boxShadow={otShadow ? 10 : 3}
+                    onMouseEnter={() => toggleShadows("orangeTree", true)}
+                    onMouseLeave={() => toggleShadows("orangeTree", false)}
                   >
-                    <Grid item>
-                      <img src={GreenTree} />
+                    <Grid container justify="center" alignItems="center">
+                      <Grid item md={4} style={{ textAlign: "center" }}>
+                        <img style={{ minWidth: "50%" }} src={GreenTree} />
+                      </Grid>
+                      <Grid item xs={12} md={8}>
+                        <h1 className={classes.workHeader}>
+                          Orange Tree Alternatives
+                        </h1>
+                        <h3 className={classes.workSubtitle}>
+                          <i>Frontend Web Developer</i>
+                        </h3>
+                        <p className={classes.workBody}>
+                          <ul>
+                            <li>
+                              Online securities marketplace democratizing and
+                              liquidizing real estate private equity investments
+                            </li>
+                            <li>
+                              Developed user sign up and login processes using
+                              React.js framework with Axios HTTP client
+                            </li>
+                            <li>
+                              Worked collaboratively with frontend and backend
+                              teams using Agile software development and Github
+                              version control
+                            </li>
+                            <li>
+                              Implemented Jest testing framework for quality
+                              assurance of product
+                            </li>
+                          </ul>
+                        </p>
+                      </Grid>
                     </Grid>
-                    <Grid item xs={12} md={8}>
-                      <h1 className={classes.workHeader}>
-                        Orange Tree Alternatives
-                      </h1>
-                      <h3 className={classes.workSubtitle}>
-                        <i>Frontend Web Developer</i>
-                      </h3>
-                      <p className={classes.workBody}>
-                        <ul>
-                          <li>
-                            Online securities marketplace democratizing and
-                            liquidizing real estate private equity investments
-                          </li>
-                          <li>
-                            Developed user sign up and login processes using
-                            React.js framework with Axios HTTP client
-                          </li>
-                          <li>
-                            Worked collaboratively with frontend and backend
-                            teams using Agile software development and Github
-                            version control
-                          </li>
-                          <li>
-                            Implemented Jest testing framework for quality
-                            assurance of product
-                          </li>
-                        </ul>
-                      </p>
-                    </Grid>
-                  </Grid>
-                </Box>
+                  </Box>
+                </a>
               </ScrollAnimation>
             </Grid>
             <Grid item xs={12} md={6}>
@@ -331,7 +350,9 @@ export default function Landing() {
                   className={classes.workBox}
                   id="IEEE"
                   className={classes.workBox}
-                  boxShadow={5}
+                  boxShadow={ieeeShadow ? 10 : 3}
+                  onMouseEnter={() => toggleShadows("IEEE", true)}
+                  onMouseLeave={() => toggleShadows("IEEE", false)}
                 >
                   <Grid item>
                     <img src={IEEE} style={{ width: "100%" }} />
@@ -365,41 +386,48 @@ export default function Landing() {
                 offset={0}
                 animateIn="animate__animated animate__fadeInUp"
               >
-                <Box
-                  className={classes.workBox}
-                  id="VERL"
-                  className={classes.workBox}
-                  boxShadow={5}
+                <a
+                  href="http://verl.npre.illinois.edu/default.html"
+                  target="_blank"
                 >
-                  <Grid item>
-                    <img src={uiuc_logo} style={{ width: "100%" }} />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <h1 className={classes.workHeaderSmall}>
-                      Virtual Education and Research Laboratory
-                    </h1>
-                    <h3 className={classes.workSubtitleSmall}>
-                      <i>Augmented Reality Project Manager</i>
-                    </h3>
-                    <p className={classes.workBodySmall}>
-                      <ul>
-                        <li>
-                          Managed a team creating 3D visualization augmented
-                          reality software
-                        </li>
-                        <li>
-                          Designed virtual science experiments which allow
-                          students to better grasp scientific concepts
-                          manifested in demonstrations
-                        </li>
-                        <li>
-                          Built AR applications using Unity game engine with C#
-                          scripting
-                        </li>
-                      </ul>
-                    </p>
-                  </Grid>
-                </Box>
+                  <Box
+                    className={classes.workBox}
+                    id="VERL"
+                    className={classes.workBox}
+                    boxShadow={verlShadow ? 10 : 3}
+                    onMouseEnter={() => toggleShadows("VERL", true)}
+                    onMouseLeave={() => toggleShadows("VERL", false)}
+                  >
+                    <Grid item>
+                      <img src={uiuc_logo} style={{ width: "100%" }} />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <h1 className={classes.workHeaderSmall}>
+                        Virtual Education and Research Laboratory
+                      </h1>
+                      <h3 className={classes.workSubtitleSmall}>
+                        <i>Augmented Reality Project Manager</i>
+                      </h3>
+                      <p className={classes.workBodySmall}>
+                        <ul>
+                          <li>
+                            Managed a team creating 3D visualization augmented
+                            reality software
+                          </li>
+                          <li>
+                            Designed virtual science experiments which allow
+                            students to better grasp scientific concepts
+                            manifested in demonstrations
+                          </li>
+                          <li>
+                            Built AR applications using Unity game engine with
+                            C# scripting
+                          </li>
+                        </ul>
+                      </p>
+                    </Grid>
+                  </Box>
+                </a>
               </ScrollAnimation>
             </Grid>
           </Grid>
@@ -432,8 +460,8 @@ export default function Landing() {
                 <Box
                   id="vinyl-stream"
                   className={classes.paper}
-                  onMouseEnter={() => toggleShadows("vinyl-stream")}
-                  onMouseLeave={() => toggleShadows("vinyl-stream")}
+                  onMouseEnter={() => toggleShadows("vinyl-stream", true)}
+                  onMouseLeave={() => toggleShadows("vinyl-stream", false)}
                   boxShadow={vsShadow ? 10 : 3}
                   onClick={() =>
                     window.open(
@@ -477,8 +505,8 @@ export default function Landing() {
                 <Box
                   id="virtubook"
                   className={classes.paper}
-                  onMouseEnter={() => toggleShadows("virtubook")}
-                  onMouseLeave={() => toggleShadows("virtubook")}
+                  onMouseEnter={() => toggleShadows("virtubook", true)}
+                  onMouseLeave={() => toggleShadows("virtubook", false)}
                   boxShadow={vbShadow ? 10 : 3}
                   onClick={() =>
                     window.open("https://virtubook.herokuapp.com", "_blank")

@@ -135,6 +135,7 @@ export default function Landing() {
                     className="animate__animated animate__fadeInUp"
                     style={{
                       animationDuration: "0.5s",
+                      animationDelay: "0.5s",
                       marginTop: 0,
                       marginBottom: 0,
                     }}
@@ -146,7 +147,7 @@ export default function Landing() {
                   <h1
                     className="animate__animated animate__fadeInUp"
                     style={{
-                      animationDelay: ".75s",
+                      animationDelay: "1.25s",
                       animationDuration: "0.5s",
                     }}
                   >
@@ -440,6 +441,7 @@ export default function Landing() {
         >
           <Grid item xs={12}>
             <ScrollAnimation
+              offset={0}
               animateOnce
               animateIn="animate__animated animate__fadeInUp"
             >
@@ -540,7 +542,7 @@ export default function Landing() {
           id="skills"
           className={classes.background5}
           justify="center"
-          spacing={2}
+          spacing={5}
         >
           <Grid item xs={12}>
             <ScrollAnimation

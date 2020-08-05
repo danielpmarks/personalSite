@@ -37,7 +37,7 @@ const useStyles = makeStyles((AppTheme) => ({
       fontSize: "2rem",
     },
     [AppTheme.breakpoints.down("xs")]: {
-      fontSize: "1rem",
+      fontSize: "1.25rem",
       marginTop: AppTheme.spacing(15),
     },
     [AppTheme.breakpoints.up("md")]: {
@@ -125,8 +125,8 @@ const useStyles = makeStyles((AppTheme) => ({
   },
 
   infoBox: {
-    backgroundColor: "white",
-    color: "black",
+    backgroundColor: "#00cc7a",
+    color: "white",
     textAlign: "center",
     padding: AppTheme.spacing(2),
     minHeight: AppTheme.spacing(45),
@@ -345,7 +345,6 @@ const useStyles = makeStyles((AppTheme) => ({
     backgroundColor: "#3366cc",
     paddingTop: AppTheme.spacing(2),
     paddingBottom: AppTheme.spacing(2),
-    marginBottom: AppTheme.spacing(5),
   },
   skillsBody: {
     [AppTheme.breakpoints.up("lg")]: {

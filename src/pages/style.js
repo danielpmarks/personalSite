@@ -225,12 +225,11 @@ const useStyles = makeStyles((AppTheme) => ({
     padding: AppTheme.spacing(2),
     backgroundColor: "white",
     color: "black",
-    minHeight: AppTheme.spacing(70),
   },
   workHeader: {
     textAlign: "left",
     [AppTheme.breakpoints.up("sm")]: {
-      fontSize: "3rem",
+      fontSize: "2.5rem",
     },
     [AppTheme.breakpoints.only("xs")]: {
       fontSize: "1.75rem",
@@ -245,7 +244,7 @@ const useStyles = makeStyles((AppTheme) => ({
       textAlign: "left",
     },
     [AppTheme.breakpoints.only("sm")]: {
-      fontSize: "3rem",
+      fontSize: "2.5rem",
       textAlign: "left",
     },
     [AppTheme.breakpoints.only("xs")]: {
@@ -255,11 +254,14 @@ const useStyles = makeStyles((AppTheme) => ({
   },
   workSubtitle: {
     fontWeight: 400,
-    [AppTheme.breakpoints.up("sm")]: {
+    [AppTheme.breakpoints.up("md")]: {
       fontSize: "2rem",
     },
-    [AppTheme.breakpoints.only("xs")]: {
+    [AppTheme.breakpoints.only("sm")]: {
       fontSize: "1.5rem",
+    },
+    [AppTheme.breakpoints.only("xs")]: {
+      fontSize: "1.25rem",
       textAlign: "center",
     },
     marginTop: 0,
@@ -271,10 +273,10 @@ const useStyles = makeStyles((AppTheme) => ({
       fontSize: "1.5rem",
     },
     [AppTheme.breakpoints.only("sm")]: {
-      fontSize: "2rem",
+      fontSize: "1.5rem",
     },
     [AppTheme.breakpoints.only("xs")]: {
-      fontSize: "1.5rem",
+      fontSize: "1.25rem",
       textAlign: "center",
     },
     marginTop: 0,
@@ -282,10 +284,10 @@ const useStyles = makeStyles((AppTheme) => ({
   },
   workBody: {
     [AppTheme.breakpoints.up("sm")]: {
-      fontSize: "1.5rem",
+      fontSize: "1.25rem",
     },
     [AppTheme.breakpoints.up("lg")]: {
-      fontSize: "2rem",
+      fontSize: "1.5rem",
     },
 
     [AppTheme.breakpoints.only("xs")]: {
@@ -294,7 +296,7 @@ const useStyles = makeStyles((AppTheme) => ({
   },
   workBodySmall: {
     [AppTheme.breakpoints.up("sm")]: {
-      fontSize: "1.5rem",
+      fontSize: "1.25rem",
     },
     [AppTheme.breakpoints.only("xs")]: {
       fontSize: "1rem",

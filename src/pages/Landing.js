@@ -280,7 +280,12 @@ export default function Landing() {
             </Grid>
           </Grid>
         </Grid>
-        <Grid container id="work" className={classes.background3}>
+        <Grid
+          container
+          id="work"
+          justify="center"
+          className={classes.background3}
+        >
           <ScrollAnimation
             animateOnce
             animateIn="animate__animated animate__fadeInUp"
@@ -306,10 +311,10 @@ export default function Landing() {
                     onMouseLeave={() => toggleShadows("orangeTree", false)}
                   >
                     <Grid container justify="center" alignItems="center">
-                      <Grid item md={4} style={{ textAlign: "center" }}>
+                      <Grid item md={3} style={{ textAlign: "center" }}>
                         <img style={{ minWidth: "50%" }} src={GreenTree} />
                       </Grid>
-                      <Grid item xs={12} md={8}>
+                      <Grid item xs={12} md={9}>
                         <h1 className={classes.workHeader}>
                           Orange Tree Alternatives
                         </h1>

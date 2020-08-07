@@ -168,7 +168,7 @@ const useStyles = makeStyles((AppTheme) => ({
     overflow: "hidden",
   },
   educationTitle: {
-    textAlign: "left",
+    textAlign: "center",
     [AppTheme.breakpoints.up("lg")]: {
       fontSize: "4rem",
     },
@@ -179,6 +179,7 @@ const useStyles = makeStyles((AppTheme) => ({
       fontSize: "2rem",
       textAlign: "center",
     },
+    marginBottom: AppTheme.spacing(1),
   },
   educationInfo: {
     textAlign: "right",
@@ -192,6 +193,12 @@ const useStyles = makeStyles((AppTheme) => ({
     [AppTheme.breakpoints.down("sm")]: {
       fontSize: "1.5rem",
       textAlign: "center",
+    },
+  },
+  uiucLogo: {
+    width: "100%",
+    [AppTheme.breakpoints.down("sm")]: {
+      width: "80%",
     },
   },
   drawer: {

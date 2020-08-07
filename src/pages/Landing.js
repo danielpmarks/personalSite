@@ -7,7 +7,8 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 import portrait from "../res/portrait.png";
 import skyline from "../res/skyline.png";
-import uiuc_logo from "../res/uiuc_logo.jpg";
+import uiuc_logo from "../res/uiuc_logo.png";
+import uiuc_white from "../res/UofI.png";
 
 import AppTheme from "../AppTheme";
 
@@ -178,9 +179,10 @@ export default function Landing() {
         >
           <Grid item xs={12} md={6}>
             <ScrollAnimation animateIn="animate__animated animate__fadeInUp">
-              <h1 className={classes.educationTitle}>
-                I'm a student at the University of Illinois
-              </h1>
+              <h1 className={classes.educationTitle}>I'm a junior at the</h1>
+              <Grid item xs={12} style={{ textAlign: "center" }}>
+                <img className={classes.uiucLogo} src={uiuc_white} />
+              </Grid>
             </ScrollAnimation>
           </Grid>
 

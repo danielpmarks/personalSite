@@ -286,12 +286,14 @@ export default function Landing() {
           justify="center"
           className={classes.background3}
         >
-          <ScrollAnimation
-            animateOnce
-            animateIn="animate__animated animate__fadeInUp"
-          >
-            <h1 className={classes.sectionTitle}>Work Experience</h1>
-          </ScrollAnimation>
+          <Grid item xs={12}>
+            <ScrollAnimation
+              animateOnce
+              animateIn="animate__animated animate__fadeInUp"
+            >
+              <h1 className={classes.sectionTitle}>Work Experience</h1>
+            </ScrollAnimation>
+          </Grid>
           <Grid container spacing={5}>
             <Grid item xs={12}>
               <ScrollAnimation

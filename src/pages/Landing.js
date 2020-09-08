@@ -9,6 +9,7 @@ import portrait from "../res/portrait.png";
 import skyline from "../res/skyline.png";
 import uiuc_logo from "../res/uiuc_logo.png";
 import uiuc_white from "../res/UofI.png";
+import AGCO from "../res/AGCO.png";
 
 import AppTheme from "../AppTheme";
 
@@ -33,6 +34,7 @@ export default function Landing() {
   const [linkedInShadow, setLinkedInShadow] = useState(false);
   const [githubShadow, setGithubShadow] = useState(false);
 
+  const [AGCOShadow, setAGCOShadow] = useState(false);
   const [otShadow, setOtShadow] = useState(false);
   const [ieeeShadow, setIeeeShadow] = useState(false);
   const [verlShadow, setVerlShadow] = useState(false);
@@ -40,18 +42,18 @@ export default function Landing() {
   const sections = [
     "Home",
     "Education",
-    "Info",
     "Experience",
     "Projects",
     "Skills",
+    "Info",
   ];
   const sectionIds = [
     "#home",
     "#education",
-    "#info",
     "#work",
     "#projects",
     "#skills",
+    "#info",
   ];
 
   const jumpSection = (section) => {
@@ -75,6 +77,9 @@ export default function Landing() {
         break;
       case "github":
         setGithubShadow(state);
+        break;
+      case "AGCO":
+        setAGCOShadow(state);
         break;
       case "orangeTree":
         setOtShadow(state);
@@ -196,90 +201,7 @@ export default function Landing() {
             </ScrollAnimation>
           </Grid>
         </Grid>
-        <Grid container id="info" className={classes.info}>
-          <ScrollAnimation
-            animateOnce
-            animateIn="animate__animated animate__fadeInUp"
-          >
-            <h1 className={classes.sectionTitle}>Personal Information</h1>
-          </ScrollAnimation>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={6} md={4}>
-              <ScrollAnimation
-                animateOnce
-                animateIn="animate__animated animate__fadeInUp"
-              >
-                <a href="mailto: danielpresliermarks@gmail.com">
-                  <Box
-                    className={classes.infoBox}
-                    boxShadow={emailShadow ? 10 : 3}
-                    onMouseEnter={() => toggleShadows("email", true)}
-                    onMouseLeave={() => toggleShadows("email", false)}
-                  >
-                    <Grid container justify="center" alignItems="center">
-                      <Grid xs={12}>
-                        <EmailIcon style={{ fontSize: "15rem" }} />
-                      </Grid>
 
-                      <h2 className={classes.emailText}>
-                        danielpresliermarks
-                        <br />
-                        @gmail.com
-                      </h2>
-                    </Grid>
-                  </Box>
-                </a>
-              </ScrollAnimation>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <ScrollAnimation
-                animateOnce
-                animateIn="animate__animated animate__fadeInUp"
-              >
-                <a
-                  href="https://www.linkedin.com/in/daniel-m-510b3a128/"
-                  target="_blank"
-                >
-                  <Box
-                    className={classes.infoBox}
-                    boxShadow={linkedInShadow ? 10 : 3}
-                    onMouseEnter={() => toggleShadows("linkedIn", true)}
-                    onMouseLeave={() => toggleShadows("linkedIn", false)}
-                  >
-                    <Grid container justify="center" alignItems="center">
-                      <Grid xs={12}>
-                        <LinkedInIcon style={{ fontSize: "15rem" }} />
-                      </Grid>
-                      <h2 className={classes.infoText}>Daniel Marks</h2>
-                    </Grid>
-                  </Box>
-                </a>
-              </ScrollAnimation>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <ScrollAnimation
-                animateOnce
-                animateIn="animate__animated animate__fadeInUp"
-              >
-                <a href="https://github.com/danielpmarks" target="_blank">
-                  <Box
-                    className={classes.infoBox}
-                    boxShadow={githubShadow ? 10 : 3}
-                    onMouseEnter={() => toggleShadows("github", true)}
-                    onMouseLeave={() => toggleShadows("github", false)}
-                  >
-                    <Grid container justify="center" alignItems="center">
-                      <Grid xs={12}>
-                        <GitHubIcon style={{ fontSize: "15rem" }} />
-                      </Grid>
-                      <h2 className={classes.infoText}>danielpmarks</h2>
-                    </Grid>
-                  </Box>
-                </a>
-              </ScrollAnimation>
-            </Grid>
-          </Grid>
-        </Grid>
         <Grid
           container
           id="work"
@@ -302,6 +224,57 @@ export default function Landing() {
                 animateIn="animate__animated animate__fadeInUp"
               >
                 <a
+                  href="https://www.agcoaccelerationcenter.com/"
+                  target="_blank"
+                >
+                  <Box
+                    id="AGCO"
+                    className={classes.workBox}
+                    boxShadow={AGCOShadow ? 10 : 3}
+                    onMouseEnter={() => toggleShadows("AGCO", true)}
+                    onMouseLeave={() => toggleShadows("AGCO", false)}
+                  >
+                    <Grid container justify="center" alignItems="center">
+                      <Grid item xs={12} lg={3} style={{ textAlign: "center" }}>
+                        <img style={{ width: "80%" }} src={AGCO} />
+                      </Grid>
+                      <Grid item xs={12} lg={9}>
+                        <h1 className={classes.workHeader}>
+                          AGCO Corporation Acceleration Center
+                        </h1>
+                        <h3 className={classes.workSubtitle}>
+                          <i>Augmented Reality Intern</i>
+                        </h3>
+                        <p className={classes.workBody}>
+                          <ul>
+                            <li>
+                              Build scalable AR applications to assist
+                              manufacturing quality assurance checks
+                            </li>
+                            <li>
+                              Design mixed reality experiences with Microsoft
+                              HoloLens to assist in agricultural manufacturing
+                              maintenance and training
+                            </li>
+                            <li>
+                              Develop custom interactive CAD models for use in
+                              augmented reality applications
+                            </li>
+                          </ul>
+                        </p>
+                      </Grid>
+                    </Grid>
+                  </Box>
+                </a>
+              </ScrollAnimation>
+            </Grid>
+            <Grid item xs={12} lg={4}>
+              <ScrollAnimation
+                animateOnce
+                offset={0}
+                animateIn="animate__animated animate__fadeInUp"
+              >
+                <a
                   href="https://www.linkedin.com/company/otalternatives/"
                   target="_blank"
                 >
@@ -313,17 +286,17 @@ export default function Landing() {
                     onMouseLeave={() => toggleShadows("orangeTree", false)}
                   >
                     <Grid container justify="center" alignItems="center">
-                      <Grid item md={3} style={{ textAlign: "center" }}>
-                        <img style={{ minWidth: "50%" }} src={GreenTree} />
+                      <Grid item xs={12} style={{ textAlign: "center" }}>
+                        <img style={{ minWidth: "30%" }} src={GreenTree} />
                       </Grid>
-                      <Grid item xs={12} md={9}>
-                        <h1 className={classes.workHeader}>
+                      <Grid item xs={12}>
+                        <h1 className={classes.workHeaderSmall}>
                           Orange Tree Alternatives
                         </h1>
-                        <h3 className={classes.workSubtitle}>
+                        <h3 className={classes.workSubtitleSmall}>
                           <i>Frontend Web Developer</i>
                         </h3>
-                        <p className={classes.workBody}>
+                        <p className={classes.workBodySmall}>
                           <ul>
                             <li>
                               Online securities marketplace democratizing and
@@ -350,7 +323,7 @@ export default function Landing() {
                 </a>
               </ScrollAnimation>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} lg={4}>
               <ScrollAnimation
                 animateOnce
                 offset={0}
@@ -390,7 +363,7 @@ export default function Landing() {
                 </Box>
               </ScrollAnimation>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} lg={4}>
               <ScrollAnimation
                 animateOnce
                 offset={0}
@@ -551,7 +524,7 @@ export default function Landing() {
           id="skills"
           className={classes.background5}
           justify="center"
-          spacing={5}
+          spacing={3}
         >
           <Grid item xs={12}>
             <ScrollAnimation
@@ -579,7 +552,8 @@ export default function Landing() {
                         <li>C#</li>
                         <li>Java</li>
                         <li>Python</li>
-                        <li>SQL</li>
+                        <li>x86 Assembly</li>
+                        <li>Haskell</li>
                       </ul>
                     </p>
                   </Grid>
@@ -592,6 +566,7 @@ export default function Landing() {
                         <li>CSS</li>
                         <li>React.js</li>
                         <li>Node.js</li>
+                        <li>SQL</li>
                       </ul>
                     </p>
                   </Grid>
@@ -644,6 +619,90 @@ export default function Landing() {
                 </Grid>
               </Box>
             </ScrollAnimation>
+          </Grid>
+        </Grid>
+        <Grid container id="info" className={classes.info}>
+          <ScrollAnimation
+            animateOnce
+            animateIn="animate__animated animate__fadeInUp"
+          >
+            <h1 className={classes.sectionTitle}>Personal Information</h1>
+          </ScrollAnimation>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={6} md={4}>
+              <ScrollAnimation
+                animateOnce
+                animateIn="animate__animated animate__fadeInUp"
+              >
+                <a href="mailto: danielpresliermarks@gmail.com">
+                  <Box
+                    className={classes.infoBox}
+                    boxShadow={emailShadow ? 10 : 3}
+                    onMouseEnter={() => toggleShadows("email", true)}
+                    onMouseLeave={() => toggleShadows("email", false)}
+                  >
+                    <Grid container justify="center" alignItems="center">
+                      <Grid xs={12}>
+                        <EmailIcon style={{ fontSize: "15rem" }} />
+                      </Grid>
+
+                      <h2 className={classes.emailText}>
+                        danielpresliermarks
+                        <br />
+                        @gmail.com
+                      </h2>
+                    </Grid>
+                  </Box>
+                </a>
+              </ScrollAnimation>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <ScrollAnimation
+                animateOnce
+                animateIn="animate__animated animate__fadeInUp"
+              >
+                <a
+                  href="https://www.linkedin.com/in/daniel-m-510b3a128/"
+                  target="_blank"
+                >
+                  <Box
+                    className={classes.infoBox}
+                    boxShadow={linkedInShadow ? 10 : 3}
+                    onMouseEnter={() => toggleShadows("linkedIn", true)}
+                    onMouseLeave={() => toggleShadows("linkedIn", false)}
+                  >
+                    <Grid container justify="center" alignItems="center">
+                      <Grid xs={12}>
+                        <LinkedInIcon style={{ fontSize: "15rem" }} />
+                      </Grid>
+                      <h2 className={classes.infoText}>Daniel Marks</h2>
+                    </Grid>
+                  </Box>
+                </a>
+              </ScrollAnimation>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <ScrollAnimation
+                animateOnce
+                animateIn="animate__animated animate__fadeInUp"
+              >
+                <a href="https://github.com/danielpmarks" target="_blank">
+                  <Box
+                    className={classes.infoBox}
+                    boxShadow={githubShadow ? 10 : 3}
+                    onMouseEnter={() => toggleShadows("github", true)}
+                    onMouseLeave={() => toggleShadows("github", false)}
+                  >
+                    <Grid container justify="center" alignItems="center">
+                      <Grid xs={12}>
+                        <GitHubIcon style={{ fontSize: "15rem" }} />
+                      </Grid>
+                      <h2 className={classes.infoText}>danielpmarks</h2>
+                    </Grid>
+                  </Box>
+                </a>
+              </ScrollAnimation>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>

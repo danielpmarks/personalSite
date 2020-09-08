@@ -357,7 +357,7 @@ const useStyles = makeStyles((AppTheme) => ({
   },
   skillsBody: {
     [AppTheme.breakpoints.up("lg")]: {
-      fontSize: "2rem",
+      fontSize: "1.9rem",
     },
     [AppTheme.breakpoints.down("md")]: {
       fontSize: "1.5rem",

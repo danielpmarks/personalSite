@@ -196,7 +196,7 @@ export default function Landing() {
               <h3 className={classes.educationInfo}>
                 Major : Computer Engineering
                 <br />
-                GPA : 3.75/4.0
+                GPA : 3.72/4.0
               </h3>
             </ScrollAnimation>
           </Grid>

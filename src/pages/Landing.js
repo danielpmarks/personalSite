@@ -1,15 +1,19 @@
 import React, { useState } from "react";
-import { Grid, Drawer, Button, Paper, Box } from "@material-ui/core";
+import { Grid, Drawer, Button, Paper, Box, Accordion, AccordionDetails, AccordionSummary } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import EmailIcon from "@material-ui/icons/Email";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import ExpandLessIcon from "@material-ui/icons/ExpandLess";
+
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 import portrait from "../res/portrait.png";
 import skyline from "../res/skyline.png";
 import uiuc_logo from "../res/uiuc_logo.png";
 import uiuc_white from "../res/UofI.png";
 import AGCO from "../res/AGCO.png";
+import Amazon from "../res/amazon.png"
 
 import AppTheme from "../AppTheme";
 
@@ -30,11 +34,13 @@ export default function Landing() {
   const [vsShadow, setVsShadow] = useState(false);
   const [vbShadow, setVbShadow] = useState(false);
 
+
   const [emailShadow, setEmailShadow] = useState(false);
   const [linkedInShadow, setLinkedInShadow] = useState(false);
   const [githubShadow, setGithubShadow] = useState(false);
 
   const [AGCOShadow, setAGCOShadow] = useState(false);
+  const [AmazonShadow, setAmazonShadow] = useState(false);
   const [otShadow, setOtShadow] = useState(false);
   const [ieeeShadow, setIeeeShadow] = useState(false);
   const [verlShadow, setVerlShadow] = useState(false);
@@ -81,6 +87,9 @@ export default function Landing() {
       case "AGCO":
         setAGCOShadow(state);
         break;
+      case "Amazon":
+        setAmazonShadow(state);
+        break;  
       case "orangeTree":
         setOtShadow(state);
         break;
@@ -196,9 +205,26 @@ export default function Landing() {
               <h3 className={classes.educationInfo}>
                 Major : Computer Engineering
                 <br />
-                GPA : 3.72/4.0
+                GPA : 3.70/4.0
               </h3>
             </ScrollAnimation>
+          </Grid>
+          <Grid container xs={12} justify="center">
+          <Grid item alignItems="center" >
+            <ScrollAnimation animateIn="animate__animated animate__fadeInUp">
+              <Accordion className={classes.dropdown}>
+              <AccordionSummary
+                justify="flex-start"
+                expandIcon={<ExpandMoreIcon style={{color:"white"}}/>}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >See Relevant Courses </AccordionSummary>
+              <AccordionDetails className={classes.dropdownBody}>
+              Data Structures, Database Systems, Computer Systems Engineering, Artificial Intelligence, Interactive Computer Graphics, Digital Systems Laboratory, Digital/Analog Signal Processing, Probability with Engineering Applications, Applied Linear Algebra, Differential Equations
+              </AccordionDetails>
+              </Accordion>
+            </ScrollAnimation>
+          </Grid>
           </Grid>
         </Grid>
 
@@ -207,27 +233,75 @@ export default function Landing() {
           id="work"
           justify="center"
           className={classes.background3}
+          alignment="stretch"
         >
           <Grid item xs={12}>
             <ScrollAnimation
               animateOnce
               animateIn="animate__animated animate__fadeInUp"
+              style={{height: "100%"}}
             >
               <h1 className={classes.sectionTitle}>Work Experience</h1>
             </ScrollAnimation>
           </Grid>
           <Grid container spacing={5}>
-            <Grid item xs={12}>
+          <Grid item xs={12} lg={6}>
               <ScrollAnimation
+              style={{height: "95%"}}
                 animateOnce
                 offset={0}
                 animateIn="animate__animated animate__fadeInUp"
+              >
+                <a
+                  //href="https://www.agcoaccelerationcenter.com/"
+                  target="_blank"
+                >
+                  <Box
+                  style={{height: "100%"}}
+                    id="Amazon"
+                    className={classes.workBox}
+                    boxShadow={AmazonShadow ? 10 : 3}
+                    onMouseEnter={() => toggleShadows("Amazon", true)}
+                    onMouseLeave={() => toggleShadows("Amazon", false)}
+                  >
+                    <Grid container justify="center" alignItems="center">
+                      <Grid item xs={12} style={{ textAlign: "center" }}>
+                        <img style={{ width: "80%" }} src={Amazon} />
+                      </Grid>
+                      <Grid item xs={12} >
+                        <h1 className={classes.workHeader}>
+                          Amazon
+                        </h1>
+                        <h3 className={classes.workSubtitle}>
+                          <i>Incoming Software Development Intern</i>
+                        </h3>
+                        <p className={classes.workBody}>
+                          <ul>
+                            <li>
+Joining the world-class team of software developers at Amazon in Seattle, WA for the summer of 2021                            </li>
+                           
+                          </ul>
+                        </p>
+                      </Grid>
+                    </Grid>
+                  </Box>
+                </a>
+              </ScrollAnimation>
+            </Grid>
+            <Grid item xs={12}  md={6}>
+              <ScrollAnimation
+                style={{height: "95%"}}
+                animateOnce
+                offset={0}
+                animateIn="animate__animated animate__fadeInUp"
+                
               >
                 <a
                   href="https://www.agcoaccelerationcenter.com/"
                   target="_blank"
                 >
                   <Box
+                    style={{height: "100%"}}
                     id="AGCO"
                     className={classes.workBox}
                     boxShadow={AGCOShadow ? 10 : 3}
@@ -235,10 +309,10 @@ export default function Landing() {
                     onMouseLeave={() => toggleShadows("AGCO", false)}
                   >
                     <Grid container justify="center" alignItems="center">
-                      <Grid item xs={12} lg={3} style={{ textAlign: "center" }}>
+                      <Grid item xs={12} style={{ textAlign: "center" }}>
                         <img style={{ width: "80%" }} src={AGCO} />
                       </Grid>
-                      <Grid item xs={12} lg={9}>
+                      <Grid item xs={12}>
                         <h1 className={classes.workHeader}>
                           AGCO Corporation Acceleration Center
                         </h1>
@@ -248,17 +322,16 @@ export default function Landing() {
                         <p className={classes.workBody}>
                           <ul>
                             <li>
-                              Build scalable AR applications to assist
-                              manufacturing quality assurance checks
+                            Utilize real-time object recognition to assist in manufacturing quality assurance and vehicle servicing 
                             </li>
                             <li>
-                              Design mixed reality experiences with Microsoft
-                              HoloLens to assist in agricultural manufacturing
-                              maintenance and training
+                            Design interactive augmented reality visualizations of large scale grain systems
                             </li>
                             <li>
-                              Develop custom interactive CAD models for use in
-                              augmented reality applications
+                            Implement ASP.NET REST APIs to transfer and parse HTML and JSON data from web applications
+                            </li>
+                            <li>
+                            Develop a pipeline to construct mobile AR experiences automatically from a scalable web service
                             </li>
                           </ul>
                         </p>
@@ -268,8 +341,9 @@ export default function Landing() {
                 </a>
               </ScrollAnimation>
             </Grid>
-            <Grid item xs={12} lg={4}>
+            <Grid item xs={12} md={6} lg={4}>
               <ScrollAnimation
+              style={{height: "95%"}}
                 animateOnce
                 offset={0}
                 animateIn="animate__animated animate__fadeInUp"
@@ -279,6 +353,7 @@ export default function Landing() {
                   target="_blank"
                 >
                   <Box
+                  style={{height: "100%"}}
                     id="orange-tree"
                     className={classes.workBox}
                     boxShadow={otShadow ? 10 : 3}
@@ -290,10 +365,10 @@ export default function Landing() {
                         <img style={{ minWidth: "30%" }} src={GreenTree} />
                       </Grid>
                       <Grid item xs={12}>
-                        <h1 className={classes.workHeaderSmall}>
+                        <h1 className={classes.workHeaderMed}>
                           Orange Tree Alternatives
                         </h1>
-                        <h3 className={classes.workSubtitleSmall}>
+                        <h3 className={classes.workSubtitleMed}>
                           <i>Frontend Web Developer</i>
                         </h3>
                         <p className={classes.workBodySmall}>
@@ -567,6 +642,7 @@ export default function Landing() {
                         <li>React.js</li>
                         <li>Node.js</li>
                         <li>SQL</li>
+                        <li>.NET Core</li>
                       </ul>
                     </p>
                   </Grid>
@@ -588,8 +664,9 @@ export default function Landing() {
                       <ul style={{ margin: 0 }}>
                         <li>Unity Game Engine</li>
                         <li>Visual Studio Code</li>
-                        <li>Creo Parametric</li>
+                        <li>Creo Software Suite</li>
                         <li>Autodesk Inventor/Fusion 360</li>
+                        <li>Postman</li>
                       </ul>
                     </p>
                   </Grid>
@@ -613,6 +690,7 @@ export default function Landing() {
                         <li>Agile Software Development</li>
                         <li>REST API Usage</li>
                         <li>Jest Testing Framework</li>
+                        
                       </ul>
                     </p>
                   </Grid>

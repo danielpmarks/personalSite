@@ -237,6 +237,25 @@ const useStyles = makeStyles((AppTheme) => ({
     },
     marginBottom: 0,
   },
+  workHeaderMed: {
+    textAlign: "center",
+    [AppTheme.breakpoints.up("lg")]: {
+      fontSize: "1.75rem",
+      textAlign: "left",
+    },
+    [AppTheme.breakpoints.only("md")]: {
+      fontSize: "2.5rem",
+      textAlign:"left"
+    },
+    [AppTheme.breakpoints.only("sm")]: {
+      fontSize: "2.5rem",
+      textAlign: "left",
+    },
+    [AppTheme.breakpoints.only("xs")]: {
+      fontSize: "1.75rem",
+    },
+    marginBottom: 0,
+  },
   workHeaderSmall: {
     textAlign: "center",
     [AppTheme.breakpoints.up("md")]: {
@@ -282,6 +301,25 @@ const useStyles = makeStyles((AppTheme) => ({
     marginTop: 0,
     marginBottom: 0,
   },
+
+  workSubtitleMed: {
+    fontWeight: 400,
+    [AppTheme.breakpoints.up("lg")]: {
+      fontSize: "1.5rem",
+    },
+    [AppTheme.breakpoints.only("md")]: {
+      fontSize: "2rem",
+    },
+    [AppTheme.breakpoints.only("sm")]: {
+      fontSize: "1.5rem",
+    },
+    [AppTheme.breakpoints.only("xs")]: {
+      fontSize: "1.25rem",
+      textAlign: "center",
+    },
+    marginTop: 0,
+    marginBottom: 0,
+  },
   workBody: {
     [AppTheme.breakpoints.up("sm")]: {
       fontSize: "1.25rem",
@@ -294,6 +332,7 @@ const useStyles = makeStyles((AppTheme) => ({
       fontSize: "1rem",
     },
   },
+
   workBodySmall: {
     [AppTheme.breakpoints.up("sm")]: {
       fontSize: "1.25rem",
@@ -363,6 +402,25 @@ const useStyles = makeStyles((AppTheme) => ({
       fontSize: "1.5rem",
     },
   },
+  dropdown:{
+    background: "none",
+    boxShadow:"none",
+    color: "white",
+    fontSize: "2rem",
+    [AppTheme.breakpoints.down("md")]: {
+      fontSize: "1.5rem",
+    },
+  },
+  dropdownBody: {
+    fontSize: "1.5rem",
+    [AppTheme.breakpoints.down("md")]: {
+      fontSize: "1rem",
+    },
+  },
+  expandIcons:{
+    marginLeft: "2rem",
+    fontSize: "2rem"
+  }
 }));
 
 export default useStyles;

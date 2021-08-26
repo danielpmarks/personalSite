@@ -14,6 +14,7 @@ import uiuc_logo from "../res/uiuc_logo.png";
 import uiuc_white from "../res/UofI.png";
 import AGCO from "../res/AGCO.png";
 import Amazon from "../res/amazon.png"
+import Tetris from "../res/tetris_block.png"
 
 import AppTheme from "../AppTheme";
 
@@ -31,6 +32,7 @@ import useStyles from "./style.js";
 export default function Landing() {
   const classes = useStyles();
   const [drawer, setDrawer] = useState(false);
+  const [tetrisShadow, setTetrisShadow] = useState(false);
   const [vsShadow, setVsShadow] = useState(false);
   const [vbShadow, setVbShadow] = useState(false);
 
@@ -69,6 +71,9 @@ export default function Landing() {
 
   const toggleShadows = (id, state) => {
     switch (id) {
+      case "tetris":
+        setTetrisShadow(state);
+        break;
       case "vinyl-stream":
         setVsShadow(state);
         break;
@@ -89,7 +94,7 @@ export default function Landing() {
         break;
       case "Amazon":
         setAmazonShadow(state);
-        break;  
+        break;
       case "orangeTree":
         setOtShadow(state);
         break;
@@ -193,7 +198,7 @@ export default function Landing() {
         >
           <Grid item xs={12} md={6}>
             <ScrollAnimation animateIn="animate__animated animate__fadeInUp">
-              <h1 className={classes.educationTitle}>I'm a junior at the</h1>
+              <h1 className={classes.educationTitle}>Senior at the</h1>
               <Grid item xs={12} style={{ textAlign: "center" }}>
                 <img className={classes.uiucLogo} src={uiuc_white} />
               </Grid>
@@ -205,26 +210,25 @@ export default function Landing() {
               <h3 className={classes.educationInfo}>
                 Major : Computer Engineering
                 <br />
-                GPA : 3.70/4.0
+                GPA : 3.66/4.0
               </h3>
             </ScrollAnimation>
           </Grid>
           <Grid container xs={12} justify="center">
-          <Grid item alignItems="center" >
-            <ScrollAnimation animateIn="animate__animated animate__fadeInUp">
-              <Accordion className={classes.dropdown}>
-              <AccordionSummary
-                justify="flex-start"
-                expandIcon={<ExpandMoreIcon style={{color:"white"}}/>}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >See Relevant Courses </AccordionSummary>
-              <AccordionDetails className={classes.dropdownBody}>
-              Data Structures, Database Systems, Computer Systems Engineering, Artificial Intelligence, Interactive Computer Graphics, Digital Systems Laboratory, Digital/Analog Signal Processing, Probability with Engineering Applications, Applied Linear Algebra, Differential Equations
-              </AccordionDetails>
-              </Accordion>
-            </ScrollAnimation>
-          </Grid>
+            <Grid item alignItems="center" >
+              <ScrollAnimation animateIn="animate__animated animate__fadeInUp">
+                <Accordion className={classes.dropdown}>
+                  <AccordionSummary
+                    justify="flex-start"
+                    expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                  >See Relevant Courses </AccordionSummary>
+                  <AccordionDetails className={classes.dropdownBody}>
+                    Data Structures, Database Systems, Computer Systems Engineering, Applied Parallel Programming, Computer Organization and Design, Artificial Intelligence, Applied Machine Learning, Interactive Computer Graphics, Digital Systems Laboratory, Digital/Analog Signal Processing, Probability with Engineering Applications, Applied Linear Algebra, Differential Equations              </AccordionDetails>
+                </Accordion>
+              </ScrollAnimation>
+            </Grid>
           </Grid>
         </Grid>
 
@@ -239,15 +243,15 @@ export default function Landing() {
             <ScrollAnimation
               animateOnce
               animateIn="animate__animated animate__fadeInUp"
-              style={{height: "100%"}}
+              style={{ height: "100%" }}
             >
               <h1 className={classes.sectionTitle}>Work Experience</h1>
             </ScrollAnimation>
           </Grid>
           <Grid container spacing={5}>
-          <Grid item xs={12} lg={6}>
+            <Grid item xs={12} lg={6}>
               <ScrollAnimation
-              style={{height: "95%"}}
+                style={{ height: "95%" }}
                 animateOnce
                 offset={0}
                 animateIn="animate__animated animate__fadeInUp"
@@ -257,7 +261,7 @@ export default function Landing() {
                   target="_blank"
                 >
                   <Box
-                  style={{height: "100%"}}
+                    style={{ height: "100%" }}
                     id="Amazon"
                     className={classes.workBox}
                     boxShadow={AmazonShadow ? 10 : 3}
@@ -273,13 +277,17 @@ export default function Landing() {
                           Amazon
                         </h1>
                         <h3 className={classes.workSubtitle}>
-                          <i>Incoming Software Development Intern</i>
+                          <i>Software Development Intern</i>
                         </h3>
+                        <h3 className={classes.workDate}><i>May 2021 - August 2021</i></h3>
                         <p className={classes.workBody}>
                           <ul>
-                            <li>
-Joining the world-class team of software developers at Amazon in Seattle, WA for the summer of 2021                            </li>
-                           
+                            <li>Designed, researched, and implemented an intern project from start to finish, including rigorous code reviews, costing analysis, and rapid cloud development
+                            </li>
+                            <li>Provided detailed documentation on project design including final presentations to the organization
+                            </li>
+                            <li>Implemented Spring Beans, Mockito, ReactJS, PhaserJS, and AWS SDKs to create a reliable final product
+                            </li>
                           </ul>
                         </p>
                       </Grid>
@@ -288,20 +296,20 @@ Joining the world-class team of software developers at Amazon in Seattle, WA for
                 </a>
               </ScrollAnimation>
             </Grid>
-            <Grid item xs={12}  md={6}>
+            <Grid item xs={12} md={6}>
               <ScrollAnimation
-                style={{height: "95%"}}
+                style={{ height: "95%" }}
                 animateOnce
                 offset={0}
                 animateIn="animate__animated animate__fadeInUp"
-                
+
               >
                 <a
                   href="https://www.agcoaccelerationcenter.com/"
                   target="_blank"
                 >
                   <Box
-                    style={{height: "100%"}}
+                    style={{ height: "100%" }}
                     id="AGCO"
                     className={classes.workBox}
                     boxShadow={AGCOShadow ? 10 : 3}
@@ -319,19 +327,20 @@ Joining the world-class team of software developers at Amazon in Seattle, WA for
                         <h3 className={classes.workSubtitle}>
                           <i>Augmented Reality Intern</i>
                         </h3>
+                        <h3 className={classes.workDate}><i>September 2020 - May 2021</i></h3>
                         <p className={classes.workBody}>
                           <ul>
                             <li>
-                            Utilize real-time object recognition to assist in manufacturing quality assurance and vehicle servicing 
+                              Utilize real-time object recognition to assist in manufacturing quality assurance and vehicle servicing
                             </li>
                             <li>
-                            Design interactive augmented reality visualizations of large scale grain systems
+                              Design interactive augmented reality visualizations of large scale grain systems
                             </li>
                             <li>
-                            Implement ASP.NET REST APIs to transfer and parse HTML and JSON data from web applications
+                              Implement ASP.NET REST APIs to transfer and parse HTML and JSON data from web applications
                             </li>
                             <li>
-                            Develop a pipeline to construct mobile AR experiences automatically from a scalable web service
+                              Develop a pipeline to construct mobile AR experiences automatically from a scalable web service
                             </li>
                           </ul>
                         </p>
@@ -343,7 +352,7 @@ Joining the world-class team of software developers at Amazon in Seattle, WA for
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
               <ScrollAnimation
-              style={{height: "95%"}}
+                style={{ height: "95%" }}
                 animateOnce
                 offset={0}
                 animateIn="animate__animated animate__fadeInUp"
@@ -353,7 +362,7 @@ Joining the world-class team of software developers at Amazon in Seattle, WA for
                   target="_blank"
                 >
                   <Box
-                  style={{height: "100%"}}
+                    style={{ height: "100%" }}
                     id="orange-tree"
                     className={classes.workBox}
                     boxShadow={otShadow ? 10 : 3}
@@ -371,6 +380,7 @@ Joining the world-class team of software developers at Amazon in Seattle, WA for
                         <h3 className={classes.workSubtitleMed}>
                           <i>Frontend Web Developer</i>
                         </h3>
+                        <h3 className={classes.workDate}><i>June 2020 - August 2020</i></h3>
                         <p className={classes.workBodySmall}>
                           <ul>
                             <li>
@@ -422,6 +432,7 @@ Joining the world-class team of software developers at Amazon in Seattle, WA for
                     <h3 className={classes.workSubtitleSmall}>
                       <i>Corporate Committee Member</i>
                     </h3>
+                    <h3 className={classes.workDate}><i>September 2019 - May 2020</i></h3>
                     <p className={classes.workBodySmall}>
                       <ul>
                         <li>
@@ -466,6 +477,7 @@ Joining the world-class team of software developers at Amazon in Seattle, WA for
                       <h3 className={classes.workSubtitleSmall}>
                         <i>Augmented Reality Project Manager</i>
                       </h3>
+                      <h3 className={classes.workDate}><i>January 2020 - May 2020</i></h3>
                       <p className={classes.workBodySmall}>
                         <ul>
                           <li>
@@ -510,7 +522,51 @@ Joining the world-class team of software developers at Amazon in Seattle, WA for
             spacing={5}
             style={{ marginBottom: AppTheme.spacing(5) }}
           >
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} lg={4}>
+              <ScrollAnimation
+                animateOnce
+                offset={0}
+                animateIn="animate__animated animate__fadeInUp"
+              >
+                <Box
+                  id="vinyl-stream"
+                  className={classes.paper}
+                  onMouseEnter={() => toggleShadows("tetris", true)}
+                  onMouseLeave={() => toggleShadows("tetris", false)}
+                  boxShadow={tetrisShadow ? 10 : 3}
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/posts/daniel-m-510b3a128_tetris-soc-projectmp4-activity-6798099502357065728-lrqe",
+                      "_blank"
+                    )
+                  }
+                >
+                  <Grid
+                    container
+                    justify="center"
+                    style={{ textAlign: "center" }}
+                  >
+                    <Grid item className={classes.thumbnail}>
+                      <img
+                        src={Tetris}
+                        style={{
+                          height: "100%",
+                        }}
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <h2 className={classes.cardTitle}>FPGA Tetris</h2>
+                    </Grid>
+                    <Grid item xs={11} md={8} >
+                      <h3 className={classes.cardSubtitle}>
+                        A hardware based implementation of the classic Tetris game built on an FPGA using SystemVerilog
+                      </h3>
+                    </Grid>
+                  </Grid>
+                </Box>
+              </ScrollAnimation>
+            </Grid>
+            <Grid item xs={12} md={6} lg={4}>
               <ScrollAnimation
                 animateOnce
                 offset={0}
@@ -555,7 +611,7 @@ Joining the world-class team of software developers at Amazon in Seattle, WA for
                 </Box>
               </ScrollAnimation>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} lg={4}>
               <ScrollAnimation
                 animateOnce
                 offset={0}
@@ -617,7 +673,7 @@ Joining the world-class team of software developers at Amazon in Seattle, WA for
               animateIn="animate__animated animate__fadeInUp"
             >
               <Box className={classes.skillsBox} boxShadow={5}>
-                <h2 className={classes.skillsHeader}>Programming Languages</h2>
+                <h2 className={classes.skillsHeader}>Programming Languages and Libraries</h2>
                 <Grid container justify="start" style={{}}>
                   <Grid item xs={5}>
                     <p className={classes.skillsBody}>
@@ -629,13 +685,18 @@ Joining the world-class team of software developers at Amazon in Seattle, WA for
                         <li>Python</li>
                         <li>x86 Assembly</li>
                         <li>Haskell</li>
+                        <li>Mockito</li>
+                        <li>PyTorch</li>
+                        <li>WebGL</li>
                       </ul>
                     </p>
                   </Grid>
                   <Grid item xs={6}>
                     <p className={classes.skillsBody}>
                       <ul style={{ margin: 0 }}>
+                        <li>SystemVerilog</li>
                         <li>JavaScript</li>
+                        <li>TypeScript</li>
                         <li>JQuery</li>
                         <li>HTML</li>
                         <li>CSS</li>
@@ -643,6 +704,7 @@ Joining the world-class team of software developers at Amazon in Seattle, WA for
                         <li>Node.js</li>
                         <li>SQL</li>
                         <li>.NET Core</li>
+                        
                       </ul>
                     </p>
                   </Grid>
@@ -690,7 +752,7 @@ Joining the world-class team of software developers at Amazon in Seattle, WA for
                         <li>Agile Software Development</li>
                         <li>REST API Usage</li>
                         <li>Jest Testing Framework</li>
-                        
+
                       </ul>
                     </p>
                   </Grid>

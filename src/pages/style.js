@@ -286,6 +286,21 @@ const useStyles = makeStyles((AppTheme) => ({
     marginTop: 0,
     marginBottom: 0,
   },
+  workDate: {
+    fontWeight: 400,
+    [AppTheme.breakpoints.up("md")]: {
+      fontSize: "1.25rem",
+    },
+    [AppTheme.breakpoints.only("sm")]: {
+      fontSize: "1rem",
+    },
+    [AppTheme.breakpoints.only("xs")]: {
+      fontSize: "0.75rem",
+      textAlign: "center",
+    },
+    marginTop: 0,
+    marginBottom: 0,
+  },
   workSubtitleSmall: {
     fontWeight: 400,
     [AppTheme.breakpoints.up("md")]: {
@@ -371,7 +386,7 @@ const useStyles = makeStyles((AppTheme) => ({
       height: AppTheme.spacing(30),
     },
     [AppTheme.breakpoints.up("lg")]: {
-      height: AppTheme.spacing(40),
+      height: AppTheme.spacing(20),
     },
   },
   skillsHeader: {
@@ -396,10 +411,13 @@ const useStyles = makeStyles((AppTheme) => ({
   },
   skillsBody: {
     [AppTheme.breakpoints.up("lg")]: {
-      fontSize: "1.9rem",
+      fontSize: "1.7rem",
     },
     [AppTheme.breakpoints.down("md")]: {
       fontSize: "1.5rem",
+    },
+    [AppTheme.breakpoints.only("md")]: {
+      fontSize: "1.2rem",
     },
   },
   dropdown:{

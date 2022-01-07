@@ -15,6 +15,7 @@ import uiuc_white from "../res/UofI.png";
 import AGCO from "../res/AGCO.png";
 import Amazon from "../res/amazon.png"
 import Tetris from "../res/tetris_block.png"
+import SD411 from "../res/SD411.png"
 
 import AppTheme from "../AppTheme";
 
@@ -28,11 +29,13 @@ import GreenTree from "../res/tree.png";
 import IEEE from "../res/IEEE.png";
 
 import useStyles from "./style.js";
+import { FreeBreakfastOutlined } from "@material-ui/icons";
 
 export default function Landing() {
   const classes = useStyles();
   const [drawer, setDrawer] = useState(false);
   const [tetrisShadow, setTetrisShadow] = useState(false);
+  const [cpuShadow,setCpuShadow] = useState(false);
   const [vsShadow, setVsShadow] = useState(false);
   const [vbShadow, setVbShadow] = useState(false);
 
@@ -103,6 +106,9 @@ export default function Landing() {
         break;
       case "VERL":
         setVerlShadow(state);
+        break;
+      case "CPU":
+        setCpuShadow(state);
         break;
     }
   };
@@ -522,14 +528,62 @@ export default function Landing() {
             spacing={5}
             style={{ marginBottom: AppTheme.spacing(5) }}
           >
-            <Grid item xs={12} md={6} lg={4}>
+            <Grid item xs={12} md={6} lg={8}>
               <ScrollAnimation
+              style={{ height: "95%" }}
                 animateOnce
                 offset={0}
                 animateIn="animate__animated animate__fadeInUp"
               >
                 <Box
-                  id="vinyl-stream"
+                style={{ height: "100%" }}
+                  id="SD411"
+                  className={classes.paper}
+                  onMouseEnter={() => toggleShadows("CPU", true)}
+                  onMouseLeave={() => toggleShadows("CPU", false)}
+                  boxShadow={cpuShadow ? 10 : 3}
+                  onClick={() =>
+                    window.open(
+                      "https://github.com/danielpmarks/SD411_CPU",
+                      "_blank"
+                    )
+                  }
+                >
+                  <Grid
+                    container
+                    justify="center"
+                    style={{ textAlign: "center" }}
+                  >
+                    <Grid item className={classes.thumbnail}>
+                      <img
+                        src={SD411}
+                        style={{
+                          height: "100%",
+                        }}
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <h2 className={classes.cardTitle}>SD-411 CPU</h2>
+                    </Grid>
+                    <Grid item xs={11} md={8} >
+                      <h3 className={classes.cardSubtitle}>
+                        A fully pipelined, five-stage RISC V processor with advanced design features to improve performance
+                      </h3>
+                    </Grid>
+                  </Grid>
+                </Box>
+              </ScrollAnimation>
+            </Grid>
+            <Grid item xs={12} md={6} lg={4}>
+              <ScrollAnimation
+              style={{ height: "95%" }}
+                animateOnce
+                offset={0}
+                animateIn="animate__animated animate__fadeInUp"
+              >
+                <Box
+                style={{ height: "100%" }}
+                  id="tetris"
                   className={classes.paper}
                   onMouseEnter={() => toggleShadows("tetris", true)}
                   onMouseLeave={() => toggleShadows("tetris", false)}
@@ -568,11 +622,13 @@ export default function Landing() {
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
               <ScrollAnimation
+              style={{ height: "95%" }}
                 animateOnce
                 offset={0}
                 animateIn="animate__animated animate__fadeInUp"
               >
                 <Box
+                style={{ height: "100%" }}
                   id="vinyl-stream"
                   className={classes.paper}
                   onMouseEnter={() => toggleShadows("vinyl-stream", true)}
@@ -611,14 +667,16 @@ export default function Landing() {
                 </Box>
               </ScrollAnimation>
             </Grid>
-            <Grid item xs={12} lg={4}>
+            <Grid item xs={12} md={6} lg={8}>
               <ScrollAnimation
+              style={{ height: "95%" }}
                 animateOnce
                 offset={0}
                 animateIn="animate__animated animate__fadeInUp"
               >
                 <Box
                   id="virtubook"
+                  style={{ height: "100%" }}
                   className={classes.paper}
                   onMouseEnter={() => toggleShadows("virtubook", true)}
                   onMouseLeave={() => toggleShadows("virtubook", false)}

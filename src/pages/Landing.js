@@ -6,6 +6,7 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ExpandLessIcon from "@material-ui/icons/ExpandLess";
+import { OpenInNew } from "@material-ui/icons";
 
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 import portrait from "../res/portrait.png";
@@ -204,7 +205,7 @@ export default function Landing() {
         >
           <Grid item xs={12} md={6}>
             <ScrollAnimation animateIn="animate__animated animate__fadeInUp">
-              <h1 className={classes.educationTitle}>Senior at the</h1>
+              
               <Grid item xs={12} style={{ textAlign: "center" }}>
                 <img className={classes.uiucLogo} src={uiuc_white} />
               </Grid>
@@ -214,9 +215,9 @@ export default function Landing() {
           <Grid item xs={12} md={6}>
             <ScrollAnimation animateIn="animate__animated animate__fadeInUp">
               <h3 className={classes.educationInfo}>
-                Major : Computer Engineering
+                Degree : B.S. in Computer Engineering
                 <br />
-                GPA : 3.66/4.0
+                GPA : 3.55/4.0
               </h3>
             </ScrollAnimation>
           </Grid>
@@ -231,7 +232,22 @@ export default function Landing() {
                     id="panel1a-header"
                   >See Relevant Courses </AccordionSummary>
                   <AccordionDetails className={classes.dropdownBody}>
-                    Data Structures, Database Systems, Computer Systems Engineering, Applied Parallel Programming, Computer Organization and Design, Artificial Intelligence, Applied Machine Learning, Interactive Computer Graphics, Digital Systems Laboratory, Digital/Analog Signal Processing, Probability with Engineering Applications, Applied Linear Algebra, Differential Equations              </AccordionDetails>
+                    <p>
+                      <a href="https://courses.engr.illinois.edu/cs374/su2022/" target="_blank">Intro to Algorithms & Models of Computation <OpenInNew/> </a>,
+                      <a href="https://courses.grainger.illinois.edu/ece391/su2022/" target="_blank">Computer Systems Engineering <OpenInNew/> </a>,
+                      <a href="https://courses.grainger.illinois.edu/ece411/su2022/" target="_blank"> Computer Organization and Design<OpenInNew/> </a>,
+                      <a href="https://ece.illinois.edu/academics/courses/ece448" target="_blank"> Artificial Intelligence <OpenInNew/> </a>,
+                      <a href="https://ece.illinois.edu/academics/courses/ece408" target="_blank"> Applied Parallel Programming <OpenInNew/> </a>,
+                      <a href="https://cs.illinois.edu/academics/courses/CS441" target="_blank"> Applied Machine Learning <OpenInNew/> </a>,
+                      <a href="https://illinois-cs418.github.io/" target="_blank"> Interactive Computer Graphics <OpenInNew/> </a>,
+                      <a href="https://ece.illinois.edu/academics/courses/ece333" target="_blank">Green Electric Energy <OpenInNew/> </a>,
+                      <a href="https://cs.illinois.edu/academics/courses/cs411" target="_blank">Database Systems <OpenInNew/> </a>,
+                      <a href="https://cs.illinois.edu/academics/courses/cs411" target="_blank">Data Structures <OpenInNew/> </a>,
+                      <a href="https://ece.illinois.edu/academics/courses/ece385" target="_blank">Digital Systems Laboratory <OpenInNew/> </a>,
+
+                      Digital/Analog Signal Processing, Probability with Engineering Applications, Applied Linear Algebra, Differential Equations, Principles of Business Communication           
+                    </p>
+                    </AccordionDetails>
                 </Accordion>
               </ScrollAnimation>
             </Grid>

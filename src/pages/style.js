@@ -52,8 +52,9 @@ const useStyles = makeStyles((AppTheme) => ({
   },
   background1: {
     backgroundColor: colors.primary,
-
+    minHeight: "100vh",
     overflowY: "hidden",
+    backgroundImage: "https://images7.alphacoders.com/418/418009.jpg",
     //minHeight: "102vh",
   },
   background2: {
@@ -63,6 +64,9 @@ const useStyles = makeStyles((AppTheme) => ({
     backgroundSize: "cover",
     paddingLeft: AppTheme.spacing(2),
     paddingRight: AppTheme.spacing(2),
+
+    paddingTop: AppTheme.spacing(30),
+    minHeight: "100vh",
     [AppTheme.breakpoints.only("md")]: {
       paddingLeft: AppTheme.spacing(5),
       paddingRight: AppTheme.spacing(5),
@@ -70,31 +74,37 @@ const useStyles = makeStyles((AppTheme) => ({
     [AppTheme.breakpoints.up("lg")]: {
       paddingLeft: AppTheme.spacing(10),
       paddingRight: AppTheme.spacing(10),
+      paddingTop: AppTheme.spacing(30),
     },
 
-    paddingTop: AppTheme.spacing(20),
     paddingBottom: AppTheme.spacing(20),
     zIndex: "3",
     minHeight: "100vh",
   },
   background3: {
-    backgroundColor: "#ffe6e6",
-    color: "black",
+    minHeight: "100vh",
+    backgroundColor: "#1a1a1a",
+    color: "white",
     [AppTheme.breakpoints.up("md")]: {
+      paddingTop: "10vh",
       padding: AppTheme.spacing(5),
     },
     [AppTheme.breakpoints.down("sm")]: {
+      paddingTop: "15vh",
       padding: AppTheme.spacing(2),
     },
+    justify: "center",
   },
   background4: {
     backgroundColor: "#f2f2f2",
     color: "black",
     zIndex: 4,
     [AppTheme.breakpoints.up("md")]: {
+      paddingTop: "10vh",
       padding: AppTheme.spacing(5),
     },
     [AppTheme.breakpoints.down("sm")]: {
+      paddingTop: "15vh",
       padding: AppTheme.spacing(2),
     },
     minHeight: "100vh",
@@ -103,12 +113,15 @@ const useStyles = makeStyles((AppTheme) => ({
     backgroundColor: "#7094db",
     color: "white",
     [AppTheme.breakpoints.up("md")]: {
+      paddingTop: "10vh",
       padding: AppTheme.spacing(5),
     },
     [AppTheme.breakpoints.down("sm")]: {
+      paddingTop: "15vh",
       padding: AppTheme.spacing(2),
     },
     minHeight: "100vh",
+    margin: 0,
     zIndex: 1,
   },
   info: {
@@ -160,8 +173,16 @@ const useStyles = makeStyles((AppTheme) => ({
   portrait: {
     zIndex: 3,
     overflow: "hidden",
+    alignItems: "flex-end",
   },
   skyline: {
+    [AppTheme.breakpoints.only("xs")]: {
+      height: "100vh",
+    },
+    [AppTheme.breakpoints.up("md")]: {
+      height: "100vh",
+    },
+    backgroundSize: "cover",
     position: "absolute",
     opacity: "0.25",
     zIndex: 0,
@@ -213,12 +234,9 @@ const useStyles = makeStyles((AppTheme) => ({
   },
   sectionTitle: {
     fontSize: "4rem",
+    textAlign: "center",
     [AppTheme.breakpoints.down("sm")]: {
       fontSize: "3rem",
-      textAlign: "center",
-    },
-    [AppTheme.breakpoints.up("md")]: {
-      textAlign: "left",
     },
   },
   workBox: {
@@ -245,7 +263,7 @@ const useStyles = makeStyles((AppTheme) => ({
     },
     [AppTheme.breakpoints.only("md")]: {
       fontSize: "2.5rem",
-      textAlign:"left"
+      textAlign: "left",
     },
     [AppTheme.breakpoints.only("sm")]: {
       fontSize: "2.5rem",
@@ -273,14 +291,15 @@ const useStyles = makeStyles((AppTheme) => ({
   },
   workSubtitle: {
     fontWeight: 400,
+    fontSize: "1.5rem",
     [AppTheme.breakpoints.up("md")]: {
-      fontSize: "2rem",
+      //fontSize: "1.5rem",
     },
     [AppTheme.breakpoints.only("sm")]: {
-      fontSize: "1.5rem",
+      //fontSize: "1rem",
     },
     [AppTheme.breakpoints.only("xs")]: {
-      fontSize: "1.25rem",
+      fontSize: "1rem",
       textAlign: "center",
     },
     marginTop: 0,
@@ -337,10 +356,10 @@ const useStyles = makeStyles((AppTheme) => ({
   },
   workBody: {
     [AppTheme.breakpoints.up("sm")]: {
-      fontSize: "1.25rem",
+      fontSize: "1rem",
     },
     [AppTheme.breakpoints.up("lg")]: {
-      fontSize: "1.5rem",
+      fontSize: "1.25rem",
     },
 
     [AppTheme.breakpoints.only("xs")]: {
@@ -420,9 +439,9 @@ const useStyles = makeStyles((AppTheme) => ({
       fontSize: "1.2rem",
     },
   },
-  dropdown:{
+  dropdown: {
     background: "none",
-    boxShadow:"none",
+    boxShadow: "none",
     color: "white",
     fontSize: "2rem",
     [AppTheme.breakpoints.down("md")]: {
@@ -435,10 +454,40 @@ const useStyles = makeStyles((AppTheme) => ({
       fontSize: "1rem",
     },
   },
-  expandIcons:{
+  expandIcons: {
     marginLeft: "2rem",
-    fontSize: "2rem"
-  }
+    fontSize: "2rem",
+  },
+
+  cardAvatar: {
+    padding: 0,
+  },
+
+  topBarText: {
+    fontSize: "1rem",
+    /*[AppTheme.breakpoints.up("md")]: {
+      fontSize: "2rem",
+    },*/
+  },
+  logo: {
+    [AppTheme.breakpoints.only("sx")]: {
+      height: "2rem",
+      width: "2rem",
+    },
+    [AppTheme.breakpoints.only("sm")]: {
+      height: "3rem",
+      width: "3rem",
+    },
+
+    [AppTheme.breakpoints.only("md")]: {
+      height: "5rem",
+      width: "5rem",
+    },
+    [AppTheme.breakpoints.up("lg")]: {
+      height: "6rem",
+      width: "6rem",
+    },
+  },
 }));
 
 export default useStyles;

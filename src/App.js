@@ -17,6 +17,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import useStyles from "pages/style";
 import Education from "pages/Education";
 import WorkExperience from "pages/WorkExperience";
+import About from "pages/About";
 
 function App() {
   const classes = useStyles();
@@ -69,7 +70,7 @@ function App() {
                       alignItems="center"
                     >
                       <Grid item justify="center">
-                        <a href="/">
+                        <a href="/about">
                           <Typography
                             className={classes.topBarText}
                             fontWeight="lg"
@@ -207,6 +208,7 @@ function App() {
           <Route exact path="/" element={<Landing />} />
           <Route path="/education" element={<Education />} />
           <Route path="/experience" element={<WorkExperience />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>
     </div>

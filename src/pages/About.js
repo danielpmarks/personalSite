@@ -1,50 +1,41 @@
 import React, { useState } from "react";
-import { Grid } from "@mui/material";
+import { Grid, Typography, Box } from "@mui/material";
 
-import { makeStyles, createStyles } from "@material-ui/core/styles";
-import portrait from "../res/Cutout2.png";
-
-import AppTheme from "../AppTheme";
+import Budapest from "../res/Budapest2.JPG";
 
 import "animate.css";
 import "./style.css";
-
-import { Card, CardContent, Typography } from "@mui/material";
 import useStyles from "./style";
 
-export default function Landing() {
+export default function About() {
   const classes = useStyles();
+
   return (
-    <div className={classes.root}>
-      <Grid container sx={{ height: "100%" }}>
+    <Box sx={{ flexGrow: 1 }}>
+      {/* <img src={Budapest} /> */}
+      <Grid
+        className={classes.backgroundAbout}
+        container
+        sx={{ height: "100%" }}
+      >
         <Grid container sx={{ height: "100%" }}>
-          <Grid container className={classes.skyline} justifyContent="center">
-            <Grid item>
-              <img src="https://images7.alphacoders.com/418/418009.jpg" />
-            </Grid>
-          </Grid>
           <Grid
             id="home"
             container
             justifyContent="center"
-            alignItems="flex-end"
+            alignItems="flex-start"
             spacing={1}
-            className={classes.background1}
-            sx={{
-              marginTop: 0,
-              backgroundImage: "https://images7.alphacoders.com/418/418009.jpg",
-            }}
           >
             <Grid
               item
               xs={12}
               md={5}
-              alignItems="flex-end"
-              className={classes.title}
+              alignItems="flex-start"
+              className={classes.welcome}
               sx={{
                 height: { xs: "auto", md: "100%" },
                 margin: { xs: 2, md: 0 },
-                marginTop: { xs: "20vh", md: 0 },
+                marginTop: { xs: 10, md: 0 },
               }}
             >
               <Grid
@@ -63,37 +54,36 @@ export default function Landing() {
                           animationDuration: "0.5s",
                           animationDelay: "0.5s",
                           marginTop: 0,
-                          marginBottom: 0,
+                          marginBottom: 10,
                         }}
                       >
-                        Hi,{" "}
-                      </h1>
-                    </Grid>
-                    <Grid item xs={12}>
-                      <h1
-                        className="animate__animated animate__fadeInUp"
-                        style={{
-                          animationDelay: "1.25s",
-                          animationDuration: "0.5s",
-                          margin: 0,
-                        }}
-                      >
-                        I'm Daniel
+                        Welcome!{" "}
                       </h1>
                     </Grid>
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid
+                    className="animate__animated animate__fadeInUp"
+                    style={{
+                      animationDelay: "1s",
+                      animationDuration: "0.5s",
+                    }}
+                    item
+                    xs={12}
+                  >
                     <Typography
-                      variant="h5"
-                      className="animate__animated animate__fadeInUp"
-                      style={{
-                        animationDelay: "2s",
-                        animationDuration: "0.5s",
-                        margin: 0,
-                      }}
+                      className={classes.aboutText}
+                      sx={{ fontSize: { xs: "1rem", md: "1.25rem" } }}
                     >
-                      I'm a software developer at Meta. Explore my website to
-                      find out more about me and my work!
+                      For over three years, I've been developing software with
+                      polished front-end interfaces and augmented reality
+                      integration, in both a personal and professional capacity.
+                      I believe groundbreaking developments in AR have the
+                      potential to shape our lives for the better. From
+                      education to medicine to forming deeper connections with
+                      those around us, emerging AR applications enable so many
+                      advancements that can change how we interact with the
+                      world around us. Check out my education, experience, and
+                      projects to learn more!
                     </Typography>
                   </Grid>
                 </Grid>
@@ -113,7 +103,7 @@ export default function Landing() {
                 >
                   <img
                     style={{ width: "100%", display: "inline-block" }}
-                    src={portrait}
+                    src=""
                   />
                 </Grid>
               </Grid>
@@ -121,6 +111,6 @@ export default function Landing() {
           </Grid>
         </Grid>
       </Grid>
-    </div>
+    </Box>
   );
 }

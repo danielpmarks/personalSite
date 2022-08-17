@@ -18,6 +18,7 @@ import "animate.css";
 //Style Imports
 import "./style.css";
 import useStyles from "./style.js";
+import AppTheme from "../AppTheme";
 
 export default function WorkExperience(props) {
   const classes = useStyles();
@@ -41,11 +42,29 @@ export default function WorkExperience(props) {
 
         <Grid item xs={12} md={6}>
           <ScrollAnimation animateIn="animate__animated animate__fadeInUp">
-            <h3 className={classes.educationInfo}>
-              Degree : B.S. in Computer Engineering
-              <br />
-              GPA : 3.55/4.0
-            </h3>
+            <Grid container spacing={0}>
+              <Grid item xs={12}>
+                <h3 className={classes.educationInfo}>
+                  <u>Degree</u> <br /> Bachelor of Science in Computer
+                  Engineering
+                </h3>
+              </Grid>
+              <Grid item xs={12} style={{ padding: 0 }}>
+                <h2
+                  className={classes.educationInfo}
+                  style={{
+                    margin: 0,
+                    marginBottom: AppTheme.spacing(2),
+                    fontWeight: "normal",
+                  }}
+                >
+                  With Honors
+                </h2>
+              </Grid>
+              <Grid item xs={12} style={{ padding: 0 }}>
+                <h3 className={classes.educationInfo}>GPA : 3.55/4.0</h3>{" "}
+              </Grid>
+            </Grid>
           </ScrollAnimation>
         </Grid>
         <Grid container xs={12} justify="center">

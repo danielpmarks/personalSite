@@ -1,6 +1,7 @@
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 import AppTheme from "../AppTheme";
 import uiuc from "../res/uiuc.png";
+import budapest from "../res/Budapest.JPG";
 import colors from "./constants";
 
 const useStyles = makeStyles((AppTheme) => ({
@@ -215,6 +216,7 @@ const useStyles = makeStyles((AppTheme) => ({
       fontSize: "1.5rem",
       textAlign: "center",
     },
+    margin: 0,
   },
   uiucLogo: {
     width: "100%",
@@ -486,6 +488,70 @@ const useStyles = makeStyles((AppTheme) => ({
     [AppTheme.breakpoints.up("lg")]: {
       height: "6rem",
       width: "6rem",
+    },
+  },
+  budapest: {
+    //minWidth: "100vw",
+    //maxHeight: "100vh",
+    position: "absolute",
+    opacity: "0.25",
+    display: "inline-block",
+    zIndex: 0,
+    overflow: "hidden",
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+  },
+  backgroundAbout: {
+    backgroundColor: "black",
+    color: "white",
+    backgroundImage: `url(${budapest})`,
+    backgroundPosition: "center",
+    maxHeight: "100vh",
+    backgroundSize: "cover",
+    paddingLeft: AppTheme.spacing(2),
+    paddingRight: AppTheme.spacing(2),
+    overflow: "hidden",
+    paddingTop: "20vh",
+    minHeight: "100vh",
+    [AppTheme.breakpoints.only("md")]: {
+      paddingLeft: AppTheme.spacing(5),
+      paddingRight: AppTheme.spacing(5),
+    },
+    [AppTheme.breakpoints.up("lg")]: {
+      paddingLeft: AppTheme.spacing(10),
+      paddingRight: AppTheme.spacing(10),
+      paddingTop: AppTheme.spacing(30),
+    },
+
+    paddingBottom: AppTheme.spacing(20),
+    zIndex: "3",
+    minHeight: "100vh",
+  },
+  welcome: {
+    color: "white",
+    textAlign: "center",
+    [AppTheme.breakpoints.up("sm")]: {
+      fontSize: "2rem",
+    },
+    [AppTheme.breakpoints.down("xs")]: {
+      fontSize: "1.25rem",
+      marginTop: AppTheme.spacing(15),
+    },
+    [AppTheme.breakpoints.up("md")]: {
+      fontSize: "2rem",
+    },
+    [AppTheme.breakpoints.up("lg")]: {
+      fontSize: "3rem",
+    },
+    zIndex: 3,
+    marginLeft: AppTheme.spacing(3),
+  },
+  aboutText: {
+    [AppTheme.breakpoints.down("sm")]: {
+      fontSize: "1rem",
+    },
+    [AppTheme.breakpoints.up("md")]: {
+      fontSize: "2rem",
     },
   },
 }));

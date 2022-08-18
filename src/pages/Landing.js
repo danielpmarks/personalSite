@@ -105,6 +105,17 @@ export default function Landing() {
                 column
                 justifyContent="center"
                 alignItems="flex-end"
+                className="animate__animated animate__slideInUp"
+                style={{
+                  animationDelay: "0.5s",
+                  animationDuration: "0.75s",
+                }}
+                sx={{
+                  marginTop: {
+                    xs: AppTheme.spacing(-1),
+                    md: AppTheme.spacing(1),
+                  },
+                }}
               >
                 <Grid
                   container

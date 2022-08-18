@@ -99,7 +99,7 @@ export default function Landing() {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={12} md={5}>
+            <Grid item xs={12} md={6} lg={5}>
               <Grid
                 container
                 column
@@ -110,20 +110,17 @@ export default function Landing() {
                   animationDelay: "0.5s",
                   animationDuration: "0.75s",
                 }}
-                sx={{
-                  marginTop: {
-                    xs: AppTheme.spacing(-1),
-                    md: AppTheme.spacing(1),
-                  },
-                }}
               >
                 <Grid
                   container
-                  alignItems="flex-end "
-                  className={classes.portrait}
+                  alignItems="flex-end"
+                  justifyContent="center"
+                  sx={{
+                    marginTop: { xs: AppTheme.spacing(-0.75) },
+                  }}
                 >
                   <img
-                    style={{ width: "100%", display: "inline-block" }}
+                    style={{ width: "90%", display: "inline-block" }}
                     src={portrait}
                   />
                 </Grid>

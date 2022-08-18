@@ -30,7 +30,6 @@ const useStyles = makeStyles((AppTheme) => ({
       fontSize: "3rem",
     },
   },
-  portrait: {},
   title: {
     color: "white",
     textAlign: "center",
